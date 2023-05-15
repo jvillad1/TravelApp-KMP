@@ -19,7 +19,7 @@ class CountriesApiImpl : CountriesApi {
     private val client = HttpClient {
         expectSuccess = true
         install(HttpTimeout) {
-            val timeout = 30000L
+            val timeout = 10000L
             connectTimeoutMillis = timeout
             requestTimeoutMillis = timeout
             socketTimeoutMillis = timeout
@@ -31,7 +31,7 @@ class CountriesApiImpl : CountriesApi {
 
     private fun HttpRequestBuilder.countries(path: String) {
         url {
-            takeFrom("http://192.168.10.3:3000/")
+            takeFrom("http://10.0.2.2:3001/")
             encodedPath = path
         }
     }
