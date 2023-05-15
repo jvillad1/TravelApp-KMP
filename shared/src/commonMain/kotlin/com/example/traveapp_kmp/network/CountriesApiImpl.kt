@@ -31,6 +31,9 @@ class CountriesApiImpl : CountriesApi {
 
     private fun HttpRequestBuilder.countries(path: String) {
         url {
+            // Device
+            // takeFrom("http://192.168.1.12:3001/")
+            // Emulator
             takeFrom("http://10.0.2.2:3001/")
             encodedPath = path
         }
